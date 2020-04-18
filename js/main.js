@@ -138,3 +138,16 @@ else
 
 
 
+// Add Active Class On Page Change
+
+
+$(".nav-item .nav-link").each(function(){
+
+
+    if( $(this).html() == $("title").html() )
+    {
+        $(this).addClass("active").siblings().removeClass("active");
+    }
+
+
+});

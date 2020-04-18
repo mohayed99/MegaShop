@@ -1,5 +1,14 @@
 <?php
+
+$pagetitle = "Women";
+
 include "includes/navbar.php";
+include "includes/connect.php";
+
+$query = $conn->prepare("SELECT * FROM products where ProductCategory = 'Women'");
+$query->execute();
+
+
 ?>
 
 <div class="wrapper custom-container text-center">
@@ -51,185 +60,26 @@ include "includes/navbar.php";
 			<div class="content text-center"><!-- Start Item Content -->
 				<div class="row">
 
-					<div class="col-lg-4">
+						<?php 
+					while($result = $query->fetch())
+					{
+						echo '<div class="col-lg-4">
 						<div class="product-item">
 							<div class="product-img">
 								<div class="overlay">
-									<button class="add-to-cart">Order Now</button>
+									<button class="add-to-cart">Add To Cart</button>
 								</div>
-								<img src="img/products/product3.jpg" alt="" draggable="false">	
+								<img src="'.$result["ProductSrc"].'" alt="" draggable="false">	
 							</div>
 							<div class="product-info">
-								<h6>Umbrella</h6>
-								<span class="product-price">$29.00</span>
+								<h6>'.$result["ProductName"].'</h6>
+								<span class="product-price">'.$result["ProductPrice"].'</span>
 							</div>
 						</div>
-					</div>
-					
-					<div class="col-lg-4">
-						<div class="product-item">
-							<div class="product-img">
-								<div class="overlay">
-									<button class="add-to-cart">Order Now</button>
-								</div>
-								<img src="img/products/product3.jpg" alt="" draggable="false">	
-							</div>
-							<div class="product-info">
-								<h6>Umbrella</h6>
-								<span class="product-price">$29.00</span>
-							</div>
-						</div>
-					</div>
+					</div>';
+					}
 
-					<div class="col-lg-4">
-						<div class="product-item">
-							<div class="product-img">
-								<div class="overlay">
-									<button class="add-to-cart">Order Now</button>
-								</div>
-								<img src="img/products/product3.jpg" alt="" draggable="false">	
-							</div>
-							<div class="product-info">
-								<h6>Umbrella</h6>
-								<span class="product-price">$29.00</span>
-							</div>
-						</div>
-					</div>
-
-					<div class="col-lg-4">
-						<div class="product-item">
-							<div class="product-img">
-								<div class="overlay">
-									<button class="add-to-cart">Order Now</button>
-								</div>
-								<img src="img/products/product3.jpg" alt="" draggable="false">	
-							</div>
-							<div class="product-info">
-								<h6>Umbrella</h6>
-								<span class="product-price">$29.00</span>
-							</div>
-						</div>
-					</div>
-					
-					<div class="col-lg-4">
-						<div class="product-item">
-							<div class="product-img">
-								<div class="overlay">
-									<button class="add-to-cart">Order Now</button>
-								</div>
-								<img src="img/products/product3.jpg" alt="" draggable="false">	
-							</div>
-							<div class="product-info">
-								<h6>Umbrella</h6>
-								<span class="product-price">$29.00</span>
-							</div>
-						</div>
-					</div>
-
-					<div class="col-lg-4">
-						<div class="product-item">
-							<div class="product-img">
-								<div class="overlay">
-									<button class="add-to-cart">Order Now</button>
-								</div>
-								<img src="img/products/product3.jpg" alt="" draggable="false">	
-							</div>
-							<div class="product-info">
-								<h6>Umbrella</h6>
-								<span class="product-price">$29.00</span>
-							</div>
-						</div>
-					</div>
-
-					<div class="col-lg-4">
-						<div class="product-item">
-							<div class="product-img">
-								<div class="overlay">
-									<button class="add-to-cart">Order Now</button>
-								</div>
-								<img src="img/products/product3.jpg" alt="" draggable="false">	
-							</div>
-							<div class="product-info">
-								<h6>Umbrella</h6>
-								<span class="product-price">$29.00</span>
-							</div>
-						</div>
-					</div>
-
-					<div class="col-lg-4">
-						<div class="product-item">
-							<div class="product-img">
-								<div class="overlay">
-									<button class="add-to-cart">Order Now</button>
-								</div>
-								<img src="img/products/product3.jpg" alt="" draggable="false">	
-							</div>
-							<div class="product-info">
-								<h6>Umbrella</h6>
-								<span class="product-price">$29.00</span>
-							</div>
-						</div>
-					</div>
-
-					<div class="col-lg-4">
-						<div class="product-item">
-							<div class="product-img">
-								<div class="overlay">
-									<button class="add-to-cart">Order Now</button>
-								</div>
-								<img src="img/products/product3.jpg" alt="" draggable="false">	
-							</div>
-							<div class="product-info">
-								<h6>Umbrella</h6>
-								<span class="product-price">$29.00</span>
-							</div>
-						</div>
-					</div>
-
-					<div class="col-lg-4">
-						<div class="product-item">
-							<div class="product-img">
-								<div class="overlay">
-									<button class="add-to-cart">Order Now</button>
-								</div>
-								<img src="img/products/product3.jpg" alt="" draggable="false">	
-							</div>
-							<div class="product-info">
-								<h6>Umbrella</h6>
-								<span class="product-price">$29.00</span>
-							</div>
-						</div>
-					</div>
-
-					<div class="col-lg-4">
-						<div class="product-item">
-							<div class="product-img">
-								<div class="overlay">
-									<button class="add-to-cart">Order Now</button>
-								</div>
-								<img src="img/products/product3.jpg" alt="" draggable="false">	
-							</div>
-							<div class="product-info">
-								<h6>Umbrella</h6>
-								<span class="product-price">$29.00</span>
-							</div>
-						</div>
-					</div>
-
-					<div class="col-lg-4">
-						<div class="product-item">
-							<div class="product-img">
-								<div class="overlay">
-									<button class="add-to-cart">Order Now</button>
-								</div>
-								<img src="img/products/product3.jpg" alt="" draggable="false">	
-							</div>
-							<div class="product-info">
-								<h6>Umbrella</h6>
-								<span class="product-price">$29.00</span>
-							</div>
-						</div>
-					</div>
+					?>
 
 
 

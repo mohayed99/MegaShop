@@ -1,7 +1,29 @@
 <?php 
 session_start();
+ob_start();
+$pagetitle = "Login";
 
 
+
+
+
+include "includes/navbar.php";
+
+?>
+
+<div class="form-wrap">
+
+<div class="bread-crumb"><a href="index.php">Home</a> | Login</div>
+
+<p>Login To Your Account</p>
+<div class="divider"></div>
+
+
+<form class="horizontal-form" action="" method="POST">
+	
+	<h1 class="form-title">Login</h1>
+
+	<?php 
 
 if( $_SERVER["REQUEST_METHOD"] === "POST" )
 {
@@ -23,26 +45,6 @@ include "includes/connect.php";
 		echo "<div class='alert alert-danger'>Wrong Username / Password</div>";
 	}
 }
-
-include "includes/navbar.php";
-
-?>
-
-<div class="form-wrap">
-
-<div class="bread-crumb"><a href="index.php">Home</a> | Login</div>
-
-<p>Login To Your Account</p>
-<div class="divider"></div>
-
-
-<form class="horizontal-form" action="" method="POST">
-	
-	<h1 class="form-title">Login</h1>
-
-	<?php 
-
-
 	?>
 	<div class="form-group">
 		<input type="text" name="username" class="form-control" placeholder="Username">

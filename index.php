@@ -1,8 +1,8 @@
 <?php 
 
 session_start();
+$pagetitle = "Home";
 include "includes/navbar.php";
-
 
 
 

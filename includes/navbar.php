@@ -1,7 +1,13 @@
+<?php 
+
+include "includes/functions.php";
+
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
-	<title>MegaShop</title>
+	<title><?php title(); ?></title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="icon" type="image/png" href="favicon.png">
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
@@ -69,7 +75,7 @@
 								<?php
 								if(isset($_SESSION["user"]))
 								{
-									echo "<span><a href='accout.php'>".$_SESSION["user"]."</a> | <a href='logout.php'>Logout</a></span>";
+									echo "<span><a href='account.php'>".$_SESSION["user"]."</a> | <a href='logout.php'>Logout</a></span>";
 								}
 								else
 								{
@@ -117,9 +123,7 @@
 				     	 </li>
 
 				    	<li class="nav-item dropdown">
-					        <a class="nav-link" href="men.php" id="navbarDropdown" role="button">
-					          Men 
-					        </a>
+					        <a class="nav-link" href="men.php" id="navbarDropdown" role="button">Men</a>
 					        <!-- 
 					    	<div class="dropdown-menu" aria-labelledby="navbarDropdown">
 					          <a class="dropdown-item" href="men.php">Men Clothes</a>
@@ -132,9 +136,7 @@
 					    </li>
 
 					    <li class="nav-item dropdown">
-					        <a class="nav-link" href="women.php" id="navbarDropdown" role="button">
-					          Women 
-					        </a>
+					        <a class="nav-link" href="women.php" id="navbarDropdown" role="button">Women</a>
 					        <!--
 					    	<div class="dropdown-menu" aria-labelledby="navbarDropdown">
 					          <a class="dropdown-item" href="women.php">Women Clothes</a>

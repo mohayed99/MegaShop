@@ -1,7 +1,7 @@
 <?php 
 session_start();
 
-
+$pagetitle = "Register";
 if( $_SERVER["REQUEST_METHOD"] === "POST" )
 
 {
