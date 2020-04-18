@@ -39,7 +39,7 @@ include "includes/navbar.php";
 				</div>	
 				<li><label><input type="checkbox"><span>Red</span></label></li>
 				<li><label><input type="checkbox"><span>Green</span></label></li>
-				<li><label><input type="checkbox"><span>BLue</span></label></li>
+				<li><label><input type="checkbox"><span>Blue</span></label></li>
 				<li><label><input type="checkbox"><span>Black</span></label></li>
 				<li><label><input type="checkbox"><span>Yellow</span></label></li>
 
@@ -51,162 +51,187 @@ include "includes/navbar.php";
 			<div class="content text-center">
 				<div class="row">
 
-					<div class="product-item">
-						<div class="product-img">
-							<div class="overlay">
-								<button class="add-to-cart">Add To Cart</button>
-							</div>
-							<img src="img/products/product1.jpg" alt="" draggable="false">	
-						</div>
-						<div class="product-info">
-							<h6>Jacket</h6>
-							<span class="product-price">$29.00</span>
-						</div>
-					</div>
-
-					<div class="product-item">
-						<div class="product-img">
-							<div class="overlay">
-								<button class="add-to-cart">Add To Cart</button>
-							</div>
-							<img src="img/products/product1.jpg" alt="" draggable="false">	
-						</div>
-						<div class="product-info">
-							<h6>Jacket</h6>
-							<span class="product-price">$29.00</span>
-						</div>
-					</div>
-
-					<div class="product-item">
-						<div class="product-img">
-							<div class="overlay">
-								<button class="add-to-cart">Add To Cart</button>
-							</div>
-							<img src="img/products/product1.jpg" alt="" draggable="false">	
-						</div>
-						<div class="product-info">
-							<h6>Jacket</h6>
-							<span class="product-price">$29.00</span>
-						</div>
-					</div>
-
-
-					<div class="product-item">
-						<div class="product-img">
-							<div class="overlay">
-								<button class="add-to-cart">Add To Cart</button>
-							</div>
-							<img src="img/products/product1.jpg" alt="" draggable="false">	
-						</div>
-						<div class="product-info">
-							<h6>Jacket</h6>
-							<span class="product-price">$29.00</span>
-						</div>
-					</div>
-
+					<div class="col-lg-4">
 						<div class="product-item">
-						<div class="product-img">
-							<div class="overlay">
-								<button class="add-to-cart">Add To Cart</button>
+							<div class="product-img">
+								<div class="overlay">
+									<button class="add-to-cart">Add To Cart</button>
+								</div>
+								<img src="img/products/product1.jpg" alt="" draggable="false">	
 							</div>
-							<img src="img/products/product1.jpg" alt="" draggable="false">	
-						</div>
-						<div class="product-info">
-							<h6>Jacket</h6>
-							<span class="product-price">$29.00</span>
+							<div class="product-info">
+								<h6>Jacket</h6>
+								<span class="product-price">$29.00</span>
+							</div>
 						</div>
 					</div>
 
+
+					<div class="col-lg-4">
 						<div class="product-item">
-						<div class="product-img">
-							<div class="overlay">
-								<button class="add-to-cart">Add To Cart</button>
+							<div class="product-img">
+								<div class="overlay">
+									<button class="add-to-cart">Add To Cart</button>
+								</div>
+								<img src="img/products/product1.jpg" alt="" draggable="false">	
 							</div>
-							<img src="img/products/product1.jpg" alt="" draggable="false">	
-						</div>
-						<div class="product-info">
-							<h6>Jacket</h6>
-							<span class="product-price">$29.00</span>
+							<div class="product-info">
+								<h6>Jacket</h6>
+								<span class="product-price">$29.00</span>
+							</div>
 						</div>
 					</div>
 
+					<div class="col-lg-4">
 						<div class="product-item">
-						<div class="product-img">
-							<div class="overlay">
-								<button class="add-to-cart">Add To Cart</button>
+							<div class="product-img">
+								<div class="overlay">
+									<button class="add-to-cart">Add To Cart</button>
+								</div>
+								<img src="img/products/product1.jpg" alt="" draggable="false">	
 							</div>
-							<img src="img/products/product1.jpg" alt="" draggable="false">	
-						</div>
-						<div class="product-info">
-							<h6>Jacket</h6>
-							<span class="product-price">$29.00</span>
+							<div class="product-info">
+								<h6>Jacket</h6>
+								<span class="product-price">$29.00</span>
+							</div>
 						</div>
 					</div>
 
+					<div class="col-lg-4">
 						<div class="product-item">
-						<div class="product-img">
-							<div class="overlay">
-								<button class="add-to-cart">Add To Cart</button>
+							<div class="product-img">
+								<div class="overlay">
+									<button class="add-to-cart">Add To Cart</button>
+								</div>
+								<img src="img/products/product1.jpg" alt="" draggable="false">	
 							</div>
-							<img src="img/products/product1.jpg" alt="" draggable="false">	
-						</div>
-						<div class="product-info">
-							<h6>Jacket</h6>
-							<span class="product-price">$29.00</span>
+							<div class="product-info">
+								<h6>Jacket</h6>
+								<span class="product-price">$29.00</span>
+							</div>
 						</div>
 					</div>
 
+					<div class="col-lg-4">
 						<div class="product-item">
-						<div class="product-img">
-							<div class="overlay">
-								<button class="add-to-cart">Add To Cart</button>
+							<div class="product-img">
+								<div class="overlay">
+									<button class="add-to-cart">Add To Cart</button>
+								</div>
+								<img src="img/products/product1.jpg" alt="" draggable="false">	
 							</div>
-							<img src="img/products/product1.jpg" alt="" draggable="false">	
-						</div>
-						<div class="product-info">
-							<h6>Jacket</h6>
-							<span class="product-price">$29.00</span>
+							<div class="product-info">
+								<h6>Jacket</h6>
+								<span class="product-price">$29.00</span>
+							</div>
 						</div>
 					</div>
 
+					<div class="col-lg-4">
 						<div class="product-item">
-						<div class="product-img">
-							<div class="overlay">
-								<button class="add-to-cart">Add To Cart</button>
+							<div class="product-img">
+								<div class="overlay">
+									<button class="add-to-cart">Add To Cart</button>
+								</div>
+								<img src="img/products/product1.jpg" alt="" draggable="false">	
 							</div>
-							<img src="img/products/product1.jpg" alt="" draggable="false">	
-						</div>
-						<div class="product-info">
-							<h6>Jacket</h6>
-							<span class="product-price">$29.00</span>
+							<div class="product-info">
+								<h6>Jacket</h6>
+								<span class="product-price">$29.00</span>
+							</div>
 						</div>
 					</div>
 
+					<div class="col-lg-4">
 						<div class="product-item">
-						<div class="product-img">
-							<div class="overlay">
-								<button class="add-to-cart">Add To Cart</button>
+							<div class="product-img">
+								<div class="overlay">
+									<button class="add-to-cart">Add To Cart</button>
+								</div>
+								<img src="img/products/product1.jpg" alt="" draggable="false">	
 							</div>
-							<img src="img/products/product1.jpg" alt="" draggable="false">	
-						</div>
-						<div class="product-info">
-							<h6>Jacket</h6>
-							<span class="product-price">$29.00</span>
+							<div class="product-info">
+								<h6>Jacket</h6>
+								<span class="product-price">$29.00</span>
+							</div>
 						</div>
 					</div>
 
+					<div class="col-lg-4">
 						<div class="product-item">
-						<div class="product-img">
-							<div class="overlay">
-								<button class="add-to-cart">Add To Cart</button>
+							<div class="product-img">
+								<div class="overlay">
+									<button class="add-to-cart">Add To Cart</button>
+								</div>
+								<img src="img/products/product1.jpg" alt="" draggable="false">	
 							</div>
-							<img src="img/products/product1.jpg" alt="" draggable="false">	
-						</div>
-						<div class="product-info">
-							<h6>Jacket</h6>
-							<span class="product-price">$29.00</span>
+							<div class="product-info">
+								<h6>Jacket</h6>
+								<span class="product-price">$29.00</span>
+							</div>
 						</div>
 					</div>
+
+					<div class="col-lg-4">
+						<div class="product-item">
+							<div class="product-img">
+								<div class="overlay">
+									<button class="add-to-cart">Add To Cart</button>
+								</div>
+								<img src="img/products/product1.jpg" alt="" draggable="false">	
+							</div>
+							<div class="product-info">
+								<h6>Jacket</h6>
+								<span class="product-price">$29.00</span>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-lg-4">
+						<div class="product-item">
+							<div class="product-img">
+								<div class="overlay">
+									<button class="add-to-cart">Add To Cart</button>
+								</div>
+								<img src="img/products/product1.jpg" alt="" draggable="false">	
+							</div>
+							<div class="product-info">
+								<h6>Jacket</h6>
+								<span class="product-price">$29.00</span>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-lg-4">
+						<div class="product-item">
+							<div class="product-img">
+								<div class="overlay">
+									<button class="add-to-cart">Add To Cart</button>
+								</div>
+								<img src="img/products/product1.jpg" alt="" draggable="false">	
+							</div>
+							<div class="product-info">
+								<h6>Jacket</h6>
+								<span class="product-price">$29.00</span>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-lg-4">
+						<div class="product-item">
+							<div class="product-img">
+								<div class="overlay">
+									<button class="add-to-cart">Add To Cart</button>
+								</div>
+								<img src="img/products/product1.jpg" alt="" draggable="false">	
+							</div>
+							<div class="product-info">
+								<h6>Jacket</h6>
+								<span class="product-price">$29.00</span>
+							</div>
+						</div>
+					</div>
+					
 
 
 

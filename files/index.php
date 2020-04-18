@@ -1,5 +1,11 @@
 <?php 
+
+session_start();
 include "includes/navbar.php";
+
+
+
+
 ?>
 
 
@@ -14,7 +20,7 @@ include "includes/navbar.php";
     <div class="carousel-item active first">
     	<div class="carousel-info animated fadeIn">
     		<h1>Online Shop</h1>
-    		<p>Anything</p>
+    		<p>50% OFF</p>
     		<a href=#>Shop Now</a>
     	</div>
     </div>

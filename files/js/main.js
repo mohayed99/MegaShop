@@ -29,41 +29,14 @@ $('.owl-carousel').owlCarousel({
 // Bootstrap Slider
 
 
-$(".carousel-inner,.carousel-item").height($(window).height() - 250);
+
+
+$(".carousel-inner,.carousel-item").height($(window).height() - $(".header").height());
 
 
 // Bootstrap Slider
 
 
-
-
-
-
-// Fix Body Padding
-
-
-$("body").css("paddingTop",$(".header").innerHeight());
-
-
-
-
-// Body Padding
-
-
-
-$(window).scroll(function(){
-
-if($(this).scrollTop() > 200)
-{
-	$(".header").addClass("animated fadeInDown");
-}
-
-else
-{
-	$(".header").removeClass("animated fadeInDown");
-}
-
-});
 
 
 
@@ -147,3 +120,21 @@ $('.range-slider').jRange({
 });
 
 /* jRange */
+
+
+$(window).scroll(function(){
+
+if($(this).scrollTop() >= 40)
+{
+    $(".main-nav").addClass("fixed");    
+}
+
+else
+{
+    $(".main-nav").removeClass("fixed");    
+}
+
+});
+
+
+
