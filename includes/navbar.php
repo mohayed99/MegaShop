@@ -1,12 +1,9 @@
-<?php 
-
-include "includes/functions.php";
-
-?>
-
 <!DOCTYPE html>
-<html>
+<?php 
+include "includes/functions.php";
+?>
 <head>
+<html>
 	<title><?php title(); ?></title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="icon" type="image/png" href="favicon.png">
@@ -57,7 +54,7 @@ include "includes/functions.php";
 	<div class="header-info text-center">
 		<div class="container">
 			<div class="row">
-					<div class="row">
+					<div class="row m-auto">
 						<div class="contact-item">
 							<i class="fas fa-phone-alt"></i><span> +216 55222000</span>
 						</div>
@@ -67,7 +64,7 @@ include "includes/functions.php";
 					</div>
 				
 
-					<div class="header-setting ml-auto">
+					<div class="header-setting m-auto">
 						<div class="row">
 							<div class="setting-item">
 								<i class="fas fa-user"></i>
@@ -75,7 +72,7 @@ include "includes/functions.php";
 								<?php
 								if(isset($_SESSION["user"]))
 								{
-									echo "<span><a href='account.php'>".$_SESSION["user"]."</a> | <a href='logout.php'>Logout</a></span>";
+									echo "<span><a href='account.php' id='user-name'>".$_SESSION["user"]."</a> | <a href='logout.php'>Logout</a></span>";
 								}
 								else
 								{
@@ -89,7 +86,8 @@ include "includes/functions.php";
 							</div>
 
 							<div class="setting-item">
-								<i class="fas fa-shopping-cart"></i>
+								<a href=index.php?page=cart><i class="fas fa-shopping-cart"></i></a>
+							<span id="cart-items"><?php if (isset($_SESSION["user"])){include "cartitems.php";} ?></span>
 							</div>
 		
 							<div class="setting-item">
@@ -119,11 +117,11 @@ include "includes/functions.php";
 				    <ul class="navbar-nav ml-auto">
 				    
 				    	<li class="nav-item">
-				        <a class="nav-link active" href="index.php">Home</a>
+				        <a class="nav-link active" href="index.php" data-title="Home">Home</a>
 				     	 </li>
 
 				    	<li class="nav-item dropdown">
-					        <a class="nav-link" href="men.php" id="navbarDropdown" role="button">Men</a>
+					        <a class="nav-link" href="men.php" id="navbarDropdown" role="button" data-title="Men">Men</a>
 					        <!-- 
 					    	<div class="dropdown-menu" aria-labelledby="navbarDropdown">
 					          <a class="dropdown-item" href="men.php">Men Clothes</a>
@@ -136,7 +134,7 @@ include "includes/functions.php";
 					    </li>
 
 					    <li class="nav-item dropdown">
-					        <a class="nav-link" href="women.php" id="navbarDropdown" role="button">Women</a>
+					        <a class="nav-link" href="women.php" id="navbarDropdown" role="button" data-title="Women">Women</a>
 					        <!--
 					    	<div class="dropdown-menu" aria-labelledby="navbarDropdown">
 					          <a class="dropdown-item" href="women.php">Women Clothes</a>
@@ -149,11 +147,11 @@ include "includes/functions.php";
 					    </li>
 				     
 				     	<li class="nav-item">
-				        <a class="nav-link" href="#">Contact</a>
+				        <a class="nav-link" href="#" data-title="Contact">Contact</a>
 				        </li>
 
 				      	<li class="nav-item">
-				        <a class="nav-link" href="#">About</a>
+				        <a class="nav-link" href="#" data-title="About">About</a>
 				      	</li>
 
 				    </ul>

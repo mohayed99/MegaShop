@@ -1,11 +1,7 @@
 <?php 
-session_start();
 ob_start();
+session_start();
 $pagetitle = "Login";
-
-
-
-
 
 include "includes/navbar.php";
 
@@ -27,7 +23,7 @@ include "includes/navbar.php";
 
 if( $_SERVER["REQUEST_METHOD"] === "POST" )
 {
-include "includes/connect.php";
+	include "includes/connect.php";
 	
 	$username = $_POST["username"];
 	$password = $_POST["password"];

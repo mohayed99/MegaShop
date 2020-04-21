@@ -1,5 +1,10 @@
 <?php 
+ob_start();
 session_start();
+
+include "includes/navbar.php";
+include "includes/connect.php";
+
 
 $pagetitle = "Register";
 if( $_SERVER["REQUEST_METHOD"] === "POST" )
@@ -16,10 +21,6 @@ if( $_SERVER["REQUEST_METHOD"] === "POST" )
 	$query->execute();
 
 }
-
-
-include "includes/navbar.php";
-include "includes/connect.php";
 
 
 ?>

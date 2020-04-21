@@ -1,10 +1,30 @@
 <?php
+session_start();
 $pagetitle = "Men";
 include "includes/navbar.php";
 include "includes/connect.php";
 
-$query = $conn->prepare("SELECT * FROM products where ProductCategory = 'Men'");
+$firstquery = $conn->prepare("SELECT * FROM products");
+$firstquery->execute();
+$result_per_page = 6;
+
+if(isset($_GET["page"]))
+	{
+		$current_page = $_GET["page"];
+	}
+	
+else
+	{
+		$current_page = 1;	
+	}
+
+$result_page = (intval($current_page)-1)*$result_per_page;
+
+$query = $conn->prepare("SELECT * FROM products LIMIT ".$result_page.",".$result_per_page);
 $query->execute();
+$query_result = $firstquery->rowCount();
+$number_of_page = ceil($query_result / $result_per_page);
+
 
 ?>
 
@@ -57,14 +77,16 @@ $query->execute();
 			<div class="content text-center">
 				<div class="row">
 
-					<?php 
+					<?php
+
 					while($result = $query->fetch())
 					{
+				
 						echo '<div class="col-lg-4">
 						<div class="product-item">
 							<div class="product-img">
 								<div class="overlay">
-									<button class="add-to-cart">Add To Cart</button>
+									<button class="add-to-cart" data-id="'.$result["ProductID"].'" id="add-to-cart">Add To Cart</button>
 								</div>
 								<img src="'.$result["ProductSrc"].'" alt="" draggable="false">	
 							</div>
@@ -73,19 +95,37 @@ $query->execute();
 								<span class="product-price">'.$result["ProductPrice"].'</span>
 							</div>
 						</div>
-					</div>';
-					}
+					</div>';	
+						}
 
 					?>
 
 					
-					
-
-
-
 				</div>
 
 			</div>
+
+		<nav aria-label="Page navigation example">
+		  <ul class="pagination">
+			<?php 
+			for($i=1;$i<=$number_of_page;$i++)
+			{
+			if($i == $current_page)
+			{
+				echo "<li class='page-item'><a class='page-link active-pagination' href='?page=".$i."'>".$i."</a></li>";
+			}
+
+			else
+			{
+			echo "<li class='page-item'><a class='page-link' href='?page=".$i."'>".$i."</a></li>";	
+			}
+			}
+
+			?>
+		 </ul>
+		</nav>
+
+		
 		</div>
 
 	</div>

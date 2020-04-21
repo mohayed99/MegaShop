@@ -1,49 +1,70 @@
 <?php 
-
 session_start();
 $pagetitle = "Home";
 include "includes/navbar.php";
+include "includes/connect.php";
 
-
+$query = $conn->prepare("SELECT * FROM carousel");
+$query->execute();
 
 ?>
 
 
 <!-- Start Slider -->
 
+<?php 
+
+if(!isset($_GET["page"]))
+{
+
+?>
+
+
+
 <div class="slider">
    <div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
   <div class="carousel-inner">
 
+<?php
+
+$i=0;
+while($result = $query->fetch())
+{
+if($i == 0)
+{
+?>
+<div class="carousel-item active" style="background-image:url(<?php echo $result["carousel_src"]; ?>)">
+    	<div class='carousel-info'>
+    		<h1 class='carousel-title'><?php echo $result["carousel_title"]; ?></h1>
+    		<p class='carousel-description'><?php echo $result["carousel_description"]; ?></p>
+    		<a href=#>Shop Now</a>
+    	</div>
+   </div>
 
 
-    <div class="carousel-item active first">
-    	<div class="carousel-info animated fadeIn">
-    		<h1>Online Shop</h1>
-    		<p>50% OFF</p>
+<?php
+
+$i++;
+}
+
+else
+{
+?>
+<div class="carousel-item" style="background-image:url(<?php echo $result["carousel_src"]; ?>)">
+    	<div class='carousel-info'>
+    		<h1 class='carousel-title'><?php echo $result["carousel_title"]; ?></h1>
+    		<p class='carousel-description'><?php echo $result["carousel_description"]; ?></p>
     		<a href=#>Shop Now</a>
     	</div>
     </div>
 
-    <div class="carousel-item second animated fadeIn">
 
-    	<div class="carousel-info">
-    		<h1>Online Shop</h1>
-    		<p>Anything1</p>
-    		<a href=#>Shop Now</a>
-    	</div>
+<?php
 
-    </div>
+}
 
-    <div class="carousel-item third animated fadeIn">
-
-    	<div class="carousel-info">
-    		<h1>Online Shop</h1>
-    		<p>Anything2</p>
-    		<a href=#>Shop Now</a>
-    	</div>
-
-    </div>
+}
+?>
 
   </div>
   <a class="carousel-control-prev" href="#carouselExampleFade" role="button" data-slide="prev">
@@ -407,6 +428,116 @@ include "includes/navbar.php";
 
 <!-- End Brands -->
 
+<?php
+
+}
+
+elseif($_GET["page"] === "cart" )
+{
+
+if(isset($_SESSION["user"]))
+{
+
+$query = $conn->prepare("SELECT ProductID FROM cart WHERE username = ? ");
+$query->execute(array($_SESSION["user"]));
+
+
+
+?>
+<!-- Start Cart Page -->
+<div class="cart-item">
+   
+<!-- -->
+
+<?php 
+
+
+$query = $conn->prepare("SELECT ProductID FROM cart WHERE username = ? ");
+$query->execute(array($_SESSION["user"]));
+
+if($query->rowCount() > 0)
+{
+?>
+
+
+<!-- -->
+	<table class="table">
+    <tr>
+      <th scope="col"></th>
+      <th scope="col">Product Name</th>
+      <th scope="col">Category</th>
+      <th scope="col">Price</th>
+      <th scope="col"></th>
+    </tr>
+
+  <tbody>
+<?php
+
+while($result = $query->fetch())
+{
+$query1 = $conn->prepare("SELECT * from products where ProductID = ?");
+$query1->execute(array($result[0]));
+while($result1 = $query1->fetch())
+{
+
+
+?>
+		
+	<tr>
+      <th scope="row"><img src="<?php echo $result1['ProductSrc'];?>"></img></th>
+      <td><?php echo $result1["ProductName"]; ?></td>
+      <td><?php echo $result1['ProductCategory']; ?></td>
+      <td class="product-price"><?php echo $result1['ProductPrice'];?></td>
+      <td><button data-id="<?php echo $result[0]; ?>">X</button></td>
+    </tr>
+
+
+
+
+<?php
+}
+}
+echo '
+<tr>
+	<td colspan="3">Total</td>
+	<td colspan="2" id=total></td>
+</tr>
+  </tbody>
+</table>'
+;
+}
+else
+{
+	?>
+
+	<h1>Your card is empty now.</h1>
+
+	<?php
+}
+
+?>
+
+
+
+
+
+<!-- End Cart Page -->
+
+
+</div>
+<?php
+}
+
+else
+{
+?>
+<div class="cart-item">
+<h1>You must <a href="login.php">login</a> to see your card.</h1>
+</div>
+<?php
+}
+}
+?>
 <?php 
 include "includes/footer.php";
 ?>
